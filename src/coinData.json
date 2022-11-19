@@ -1,0 +1,14 @@
+{
+  "id": "bitcoin",
+  "symbol": "btc",
+  "name": "Bitcoin",
+  "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+  "current_price": 19982.04,
+  "market_cap": 383090633069,
+  "market_cap_rank": 1,
+  "price_change_percentage_1h_in_currency": 0.22462086258207797,
+  "price_change_percentage_1y_in_currency": -63.9411066984525,
+  "price_change_percentage_24h_in_currency": -1.5446286117043093,
+  "price_change_percentage_30d_in_currency": 5.952107429494621,
+  "price_change_percentage_7d_in_currency": 2.1379965887391834
+}
