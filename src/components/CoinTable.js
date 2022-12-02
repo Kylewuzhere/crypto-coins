@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import TableHeadButtons from "./TableHeadButtons";
+import currencyFormatter from "../utils/currencyFormatter";
 
-const CoinTable = ({ coins, loading }) => {
+const CoinTable = ({ coins, loading, currency }) => {
   const [sortBy, setSortBy] = useState("market_cap_rank");
   const [currentSort, setCurrentSort] = useState("desc");
+
   const tableHeaders = [
     { label: "market_cap_rank", text: "#" },
     { label: "name", text: "Name" },
@@ -81,7 +83,9 @@ const CoinTable = ({ coins, loading }) => {
               <td className="text-uppercase">{coin.symbol}</td>
               <td>
                 {coin.current_price
-                  ? `$${coin.current_price.toFixed(2)}`
+                  ? `${currencyFormatter(currency)}${coin.current_price.toFixed(
+                      2
+                    )}`
                   : `N/A`}
               </td>
               <td>
@@ -113,7 +117,11 @@ const CoinTable = ({ coins, loading }) => {
                   ? `${coin.price_change_percentage_1y_in_currency.toFixed(2)}%`
                   : `N/A`}
               </td>
-              <td>{coin.market_cap ? `$${coin.market_cap}` : `N/A`}</td>
+              <td>
+                {coin.market_cap
+                  ? `${currencyFormatter(currency)}${coin.market_cap}`
+                  : `N/A`}
+              </td>
             </tr>
           ))}
         </tbody>

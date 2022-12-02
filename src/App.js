@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import CoinTable from "./components/CoinTable";
 import Pagination from "./components/Pagination";
 import SearchBar from "./components/SearchBar";
+import Controls from "./components/Controls";
 import { api } from "./api";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       setLoading(false);
     };
     fetchCoins();
-  }, [currentPage]);
+  }, [coinsPerPage, currentPage, currency]);
 
   const searchCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
@@ -42,7 +43,8 @@ function App() {
     <div className="App">
       <h1>Crypto Coins</h1>
       <SearchBar setSearch={setSearch} />
-      <CoinTable coins={searchCoins} loading={loading} />
+      <Controls setCoinsPerPage={setCoinsPerPage} setCurrency={setCurrency} />
+      <CoinTable coins={searchCoins} loading={loading} currency={currency} />
       <Pagination
         onNext={() => {
           setCurrentPage(currentPage + 1);
