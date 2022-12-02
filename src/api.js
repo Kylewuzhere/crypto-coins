@@ -14,9 +14,9 @@ export const api = {
     const data = await response.json();
     return data;
   },
-  fetchCoins: async (coinsPerPage, currentPage) => {
+  fetchCoins: async (coinsPerPage, currentPage, currency) => {
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${coinsPerPage}&page=${currentPage}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`,
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${coinsPerPage}&page=${currentPage}&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y`,
       {
         method: "GET",
         headers: {
