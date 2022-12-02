@@ -8,8 +8,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [coins, setCoins] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [coinsPerPage, setCoinsPerPage] = useState(15);
   const [totalPages, setTotalPages] = useState(0);
+  const [coinsPerPage, setCoinsPerPage] = useState(20);
+  const [currency, setCurrency] = useState("usd");
 
   useEffect(() => {
     const fetchAllCoins = async () => {
@@ -24,12 +25,12 @@ function App() {
   useEffect(() => {
     const fetchCoins = async () => {
       setLoading(true);
-      const data = await api.fetchCoins(coinsPerPage, currentPage);
+      const data = await api.fetchCoins(coinsPerPage, currentPage, currency);
       setCoins(data);
       setLoading(false);
     };
     fetchCoins();
-  }, [currentPage, coinsPerPage]);
+  }, [currentPage]);
 
   return (
     <div className="App">
