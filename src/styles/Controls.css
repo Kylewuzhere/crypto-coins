@@ -1,0 +1,9 @@
+.control-group select {
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 8em;
+  padding: 0 10px;
+}
