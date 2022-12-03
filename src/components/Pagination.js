@@ -10,14 +10,22 @@ const Pagination = ({ onNext, onPrev, currentPage, totalPages }) => {
   const nextDisabled = currentPage === totalPages;
 
   return (
-    <div className="container">
-      <button onClick={onPrev} disabled={prevDisabled}>
+    <div className="container mt-3 mb-5">
+      <button
+        className="btn btn-secondary"
+        onClick={onPrev}
+        disabled={prevDisabled}
+      >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
-      <span>
+      <span className="mx-3">
         {currentPage} of {totalPages}
       </span>
-      <button onClick={onNext} disabled={nextDisabled}>
+      <button
+        className="btn btn-secondary"
+        onClick={onNext}
+        disabled={nextDisabled}
+      >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
     </div>
