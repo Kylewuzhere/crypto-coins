@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TableHeadButtons from "./TableHeadButtons";
+import "../styles/CoinTable.css";
 import currencyFormatter from "../utils/currencyFormatter";
 
 const CoinTable = ({ coins, loading, currency }) => {
@@ -51,10 +52,10 @@ const CoinTable = ({ coins, loading, currency }) => {
   }
 
   return (
-    <div className="container">
-      <table className="table">
-        <thead>
-          <tr className="col">
+    <div className="container my-3 ">
+      <table className="table coin-table">
+        <thead className="thead-light">
+          <tr>
             {tableHeaders.map((header) => (
               <th key={header.label}>
                 <TableHeadButtons
@@ -72,7 +73,7 @@ const CoinTable = ({ coins, loading, currency }) => {
               <td>
                 {coin.market_cap_rank ? `${coin.market_cap_rank}` : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 <img
                   src={coin.image}
                   alt={coin.name}
@@ -80,44 +81,44 @@ const CoinTable = ({ coins, loading, currency }) => {
                 />{" "}
                 {coin.name}
               </td>
-              <td className="text-uppercase">{coin.symbol}</td>
-              <td>
+              <td className="text-uppercase col">{coin.symbol}</td>
+              <td className="col">
                 {coin.current_price
                   ? `${currencyFormatter(currency)}${coin.current_price.toFixed(
                       2
                     )}`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.price_change_percentage_1h_in_currency
                   ? `${coin.price_change_percentage_1h_in_currency.toFixed(2)}%`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.price_change_percentage_24h_in_currency
                   ? `${coin.price_change_percentage_24h_in_currency.toFixed(
                       2
                     )}%`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.price_change_percentage_7d_in_currency
                   ? `${coin.price_change_percentage_7d_in_currency.toFixed(2)}%`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.price_change_percentage_30d_in_currency
                   ? `${coin.price_change_percentage_30d_in_currency.toFixed(
                       2
                     )}%`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.price_change_percentage_1y_in_currency
                   ? `${coin.price_change_percentage_1y_in_currency.toFixed(2)}%`
                   : `N/A`}
               </td>
-              <td>
+              <td className="col">
                 {coin.market_cap
                   ? `${currencyFormatter(currency)}${coin.market_cap}`
                   : `N/A`}

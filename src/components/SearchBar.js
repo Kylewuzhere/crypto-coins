@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SearchBar.css";
 
 const SearchBar = ({ setSearch }) => {
   const handleSearch = (e) => {
@@ -6,10 +7,11 @@ const SearchBar = ({ setSearch }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <input
+        className="rounded-end search-bar"
         type="text"
-        placeholder="Search by name in page"
+        placeholder="Search by coin in page"
         onChange={handleSearch}
       />
     </div>
