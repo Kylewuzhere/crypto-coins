@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Crypto Coins</h1>
+      <h1 className="mb-4 mt-5">Crypto Coins</h1>
       <SearchBar setSearch={setSearch} />
       <Controls setCoinsPerPage={setCoinsPerPage} setCurrency={setCurrency} />
       <CoinTable coins={searchCoins} loading={loading} currency={currency} />
