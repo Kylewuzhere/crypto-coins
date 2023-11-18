@@ -3,7 +3,7 @@
 Crypto-coins is a React app that displays up-to-date data on the cryptocurrency market. The data is retrieved from CoinGecko API. The app features the following functionalities:
 - Pagination
 - Column Sorting
-- Pagination
+- Search coin in page
 - Customize number of coins displayed per page
 - Currency selection
 
