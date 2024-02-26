@@ -1,5 +1,7 @@
 # Crypto-Coins
 
+![cryptocoins](https://github.com/Kylewuzhere/crypto-coins/assets/62544399/b3f1eb78-3dfc-461f-a3c0-24f88ff89194)
+
 Crypto-coins is a React app that displays up-to-date data on the cryptocurrency market. The data is retrieved from CoinGecko API. The app features the following functionalities:
 - Pagination
 - Column Sorting
